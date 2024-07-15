@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class SeatType {
+public class SeatType extends BaseModel{
     private String name;
 }
