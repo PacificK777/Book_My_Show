@@ -12,14 +12,14 @@ import java.util.Date;
 @Getter
 @Setter
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class) // This class with listen all the changes that can happen into DB
 public class BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)// used to auto-increment ID
     private Long id;
 
     @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date createdAt;
 
     @LastModifiedDate

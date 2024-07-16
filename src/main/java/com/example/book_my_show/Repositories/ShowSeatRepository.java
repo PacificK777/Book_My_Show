@@ -9,8 +9,9 @@ import java.util.List;
 
 @Repository
 public interface ShowSeatRepository extends JpaRepository<ShowSeat, Long> {
+    @Override
+    List<ShowSeat> findAllById(Iterable<Long> longs);
 
-    List<ShowSeat> findAllById(List<Long> showSeatIds);
     //Here, optional is not required as List can be empty but not null
 
 

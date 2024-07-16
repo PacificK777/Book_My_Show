@@ -84,6 +84,8 @@ public class BookingService {
         booking.setCreatedAt(new Date());
         booking.setAmount(priceCalculatorService.calculatePrice(showSeats,show));
 
+        //Save booking object into the DB and return the saved booking object
+
         return booking;
     }
 }
