@@ -9,7 +9,11 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "shows")
+/*if we remove (name = "shows"), the code will give runtime error because
+show is a reserved keyword in mySQl therefore show table cannot be created
+ */
+
 public class Show extends BaseModel{
 
     @ManyToOne

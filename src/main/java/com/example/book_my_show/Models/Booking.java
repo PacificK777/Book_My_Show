@@ -14,6 +14,7 @@ public class Booking extends BaseModel{ //Ticket
     private List<ShowSeat> showSeats;
 
     @OneToMany
+    @JoinColumn(name = "booking_id") //So that a seperate table "booking_Payments" would not be created by JPA
     private List<Payment> payments;
 
     @ManyToOne
@@ -22,6 +23,9 @@ public class Booking extends BaseModel{ //Ticket
     @Enumerated(EnumType.ORDINAL)
     private BookingStatus bookingStatus;
     private int amount;
+
+    @ManyToOne
+    private Show show;
 /*
    1            M
 booking ----- showseats  => M:M
